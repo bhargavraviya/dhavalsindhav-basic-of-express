@@ -6,8 +6,11 @@ const app = express();
 dotenv.config();
 const mongoose = require("mongoose");
 const cors = require("cors");
+
 app.use(express.json());
 app.use(cors());
+
+
 app.use("/users", userRouter);
 app.use("/note", noteRouter);
 
