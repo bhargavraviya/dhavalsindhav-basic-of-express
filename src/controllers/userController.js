@@ -46,7 +46,7 @@ const signin = async (req, res) => {
       SECRET_TOKEN
     );
 
-    existingUser = {...existingUser,password:null}
+    // existingUser = {...existingUser,password:null}
     res.status(200).json({ user: existingUser, token: token });
   } catch (error) {
     console.log(error);
