@@ -47,7 +47,11 @@ const signin = async (req, res) => {
     );
 
     // existingUser = {...existingUser,password:null}
-    res.status(200).json({ user: existingUser, token: token });
+    const data ={
+      user: existingUser,
+      token: token
+    }
+    res.status(200).json({,success:true,data:data  });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Something went wrong " });
