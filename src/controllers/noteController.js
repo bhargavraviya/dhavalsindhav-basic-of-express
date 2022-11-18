@@ -11,7 +11,7 @@ const createNote = async (req, res) => {
 
   try {
     await newNote.save();
-    res.status(201).json(newNote);
+    res.status(201).json({success:true,note:newNote,message:'Note Create Successfully' });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Something went wrong" });
@@ -30,7 +30,7 @@ const updateNote = async (req, res) => {
 
   try {
     await noteModel.findByIdAndUpdate(id, newNote, { new: true });
-    res.status(200).json(newNote);
+    res.status(200).json({success:true,note:newNote,message:'Note Update Successfully' });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Something went wrong" });
@@ -42,7 +42,7 @@ const deleteNote = async (req, res) => {
 
   try {
     const note = await noteModel.findByIdAndRemove(id);
-    res.status(202).json(note);
+    res.status(202).json({success:true,note:note,message:'Note Deleted Successfully' });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Something went wrong" });
@@ -52,7 +52,7 @@ const deleteNote = async (req, res) => {
 const getNotes = async (req, res) => {
   try {
     const notes = await noteModel.find({ userId: req.userId });
-    res.status(200).json(notes);
+    res.status(200).json({success:true,notes:notes });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Something went wrong" });
