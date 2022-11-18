@@ -1,11 +1,12 @@
 const noteModel = require("../models/note");
 
 const createNote = async (req, res) => {
-  const { title, description } = req.body;
+  const { title, description ,content} = req.body;
 
   const newNote = new noteModel({
     title: title,
     description: description,
+    content:content,
     userId: req.userId,
   });
 
@@ -20,11 +21,12 @@ const createNote = async (req, res) => {
 
 const updateNote = async (req, res) => {
   const id = req.params.id;
-  const { title, description } = req.body;
+  const { title, description,content } = req.body;
 
   const newNote = {
     title: title,
     description: description,
+    content:content,
     userId: req.userId,
   }
 
