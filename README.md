@@ -19,32 +19,27 @@ We encourage and welcome contributions from the open-source community. If you ha
 
 Join Our Open-Source Community and Enhance Your Express.js Web Development Projects!
 
-
-
-## Installation
-
-Install my-project with npm
-
-```bash
-  npm install my-project
-  cd my-project
-```
-    
-## Run Locally
+# Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://github.com/dhavalsindhav/basic-of-express
+  git clone https://github.com/dhavalsindhav/basic-of-express express
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd express
 ```
 
-Install dependencies
+## Setup Env
+
+```
+cp .env.example .env
+```
+
+## Install dependencies
 
 ```bash
   npm install
@@ -62,6 +57,6 @@ Start the server
 To deploy this project run
 
 ```bash
-  npm run deploy
+  npm run build
 ```
 
